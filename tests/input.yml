@@ -10,5 +10,7 @@ tasks:
       - echo "first"
   
   - name: second test task
+    depends_on:
+      - first test task
     commands:
       - echo "second"
