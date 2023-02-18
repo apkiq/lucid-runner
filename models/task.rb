@@ -1,6 +1,7 @@
 class Task
   attr_reader :name, :depends_on, :commands
-
+  attr_reader :ignore_fail
+  
   def initialize(task_schema)
     @schema = task_schema
     @name = task_schema[:name]

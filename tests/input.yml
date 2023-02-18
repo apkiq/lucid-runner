@@ -5,9 +5,10 @@ base: base/alpine-3.14
 
 tasks:
   - name: first test task
-    ignore_fail: true
+    ignore_fail: false
     commands:
       - echo "first"
+      - exit 1
   
   - name: second test task
     depends_on:
