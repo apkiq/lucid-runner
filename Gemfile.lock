@@ -5,6 +5,7 @@ GEM
     bunny (2.20.3)
       amq-protocol (~> 2.3, >= 2.3.1)
       sorted_set (~> 1, >= 1.0.2)
+    colorize (0.8.1)
     concurrent-ruby (1.2.0)
     docker-api (2.2.0)
       excon (>= 0.47.0)
@@ -36,6 +37,8 @@ GEM
       dry-logic (~> 1.4)
       zeitwerk (~> 2.6)
     excon (0.99.0)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
     multi_json (1.15.0)
     rbtree (0.4.6)
     set (1.0.3)
@@ -49,8 +52,10 @@ PLATFORMS
 
 DEPENDENCIES
   bunny (~> 2.20.3)
+  colorize (~> 0.8.1)
   docker-api (~> 2.2.0)
   dry-schema (~> 1.13.0)
+  i18n (~> 1.12.0)
 
 BUNDLED WITH
    2.4.5

@@ -1,0 +1,29 @@
+en:
+  app:
+    started: Lucid Runner started (v%{version})
+  pipeline:
+    loaded: >-
+      New pipeline loaded: 
+      %{name}
+    starting: >-
+      Pipeline is starting: 
+      %{name}
+  docker:
+    container:
+      starting: >-
+        Container is starting (base %{base}) with
+        name %{container_name}.
+      started: >-
+        Container started:
+        %{container_name}
+      cleaning: >-
+        Container %{container_name} 
+        is being cleaned...
+      cleaned: >-
+        Container %{container_name} has
+        been cleaned.
+  task:
+    executing: >-
+      Task %{name} starting...
+    executed: >-
+      Task %{name} executed.

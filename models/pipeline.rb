@@ -1,4 +1,6 @@
 class Pipeline
+  attr_reader :name
+
   def initialize(input)
     schema = PipelineSchema.(input)
     @name = schema[:name]
@@ -29,6 +31,7 @@ class Pipeline
   end
 
   def start!
+    $logger.info(I18n.t("pipeline.starting", name: @name))
     tasks = ordered_tasks
     begin
       @executor.runner.execute!(tasks)
