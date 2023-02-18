@@ -1,6 +1,9 @@
 en:
   app:
     started: Lucid Runner started (v%{version})
+    listening_rabbitmq: >-
+      Runner listening for RabbitMQ events on queue 
+      "lucid.events.payload"
   pipeline:
     loaded: >-
       New pipeline loaded: 
