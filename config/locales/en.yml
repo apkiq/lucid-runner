@@ -24,6 +24,9 @@ en:
         been cleaned.
   task:
     executing: >-
-      Task %{name} starting...
+      Task `%{name}` starting...
     executed: >-
-      Task %{name} executed.
+      Task `%{name}` executed.
+    failed: >-
+      Task `%{name}` failed and result 
+      not ignored.
