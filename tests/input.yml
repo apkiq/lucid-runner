@@ -1,0 +1,14 @@
+---
+name: Test pipeline
+executor: docker
+base: base/alpine-3.14
+
+tasks:
+  - name: first test task
+    ignore_fail: true
+    commands:
+      - echo "first"
+  
+  - name: second test task
+    commands:
+      - echo "second"
