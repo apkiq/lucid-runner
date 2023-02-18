@@ -31,9 +31,21 @@ class DockerExecutor
     tasks.each do |task|
       $logger.warn(I18n.t("task.executing", name: task.name))
       task.commands.each do |command|
-        @container.exec(command.with_sh, tty: true, stdout: true) do |stream|
-          $logger.debug(stream.chomp.colorize(:yellow))
+        res = @container.exec(command.with_sh, tty: true, stdout: true)
+        res[0].each do |log_line|
+          $logger.debug(log_line.chomp)
         end
+
+        code = res[2].to_i
+        unless task.ignore_fail
+          unless code.zero?
+            $logger.error(I18n.t("task.failed", name: task.name).colorize(:red))
+            command.status = :failed
+
+            return
+          end
+        end
+
         command.status = :done
       end
       $logger.info(I18n.t("task.executed", name: task.name))
