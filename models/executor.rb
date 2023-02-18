@@ -5,6 +5,8 @@ class Executor
   attr_accessor :runner
 
   def initialize(executor, base_image)
-    @runner = DockerExecutor.new(base_image)
+    if executor.eql?("docker")
+      @runner = DockerExecutor.new(base_image)
+    end
   end
 end
