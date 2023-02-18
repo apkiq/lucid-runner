@@ -4,6 +4,14 @@ class Command
     @status = :awaiting
   end
 
+  def with_sh
+    [
+      "/bin/sh",
+      "-c",
+      @raw
+    ]
+  end
+
   def run(executor)
     begin
       executor.execute!(raw)

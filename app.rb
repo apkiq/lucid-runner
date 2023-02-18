@@ -10,4 +10,4 @@ require_relative "./schemas/pipeline"
 
 input = YAML.load(File.read("tests/input.yml"))
 pipeline = Pipeline.new(input)
-pp pipeline
+pipeline.start!
