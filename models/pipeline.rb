@@ -8,4 +8,12 @@ class Pipeline
 
     @executor = Executor.new(schema[:executor], @base)
   end
+  def start!
+    tasks = ordered_tasks
+    begin
+      @executor.runner.execute!(tasks)
+    ensure
+      @executor.runner.clean!
+    end
+  end
 end
