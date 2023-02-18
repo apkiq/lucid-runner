@@ -1,4 +1,6 @@
 class Command
+  attr_accessor :status
+
   def initialize(command)
     @raw = command
     @status = :awaiting
@@ -10,15 +12,5 @@ class Command
       "-c",
       @raw
     ]
-  end
-
-  def run(executor)
-    begin
-      executor.execute!(raw)
-      @status = :done
-    rescue => exp
-      @status = :failed
-      @error = exp.to_s
-    end
   end
 end
